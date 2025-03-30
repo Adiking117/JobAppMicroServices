@@ -1,0 +1,10 @@
+2025-03-30 10:39:33.484628+05:30 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * FROM JOB \000d\000a\000d\000adelete [*]from job"; SQL statement:
+SELECT * FROM JOB 
+
+delete from job [42000-232]
+2025-03-30 10:39:50.303002+05:30 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * FROM JOB \000d\000a\000d\000adelete [*]from job"; SQL statement:
+SELECT * FROM JOB 
+
+delete from job [42000-232]

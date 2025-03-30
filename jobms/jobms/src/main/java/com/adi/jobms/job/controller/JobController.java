@@ -1,6 +1,7 @@
 package com.adi.jobms.job.controller;
 
 
+import com.adi.jobms.job.Response.JobCompanyDTO;
 import com.adi.jobms.job.Response.JobResponse;
 import com.adi.jobms.job.model.Job;
 import com.adi.jobms.job.service.JobService;
@@ -18,7 +19,7 @@ public class JobController {
     private JobService jobService;
 
     @GetMapping
-    public ResponseEntity<List<Job>> getAllJobs(){
+    public ResponseEntity<List<JobCompanyDTO>> getAllJobs(){
         // return new ResponseEntity<>(jobService.getALlJobs(), HttpStatus.OK);
         return ResponseEntity.ok(jobService.getALlJobs());
     }

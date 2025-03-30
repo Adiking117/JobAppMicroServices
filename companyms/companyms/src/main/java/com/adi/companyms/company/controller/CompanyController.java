@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/companies")
 public class CompanyController {
@@ -24,8 +25,13 @@ public class CompanyController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<CompanyResponse> getCompanyById(@PathVariable long id){
-        return ResponseEntity.ok(new CompanyResponse("Company",companyService.getCompanyById(id)));
+    public ResponseEntity<Company> getCompanyById(@PathVariable long id){
+        return ResponseEntity.ok(companyService.getCompanyById(id));
+    }
+
+    @GetMapping("/batch")
+    public ResponseEntity<List<Company>> getCompaniesByIds(@RequestParam List<Long> ids){
+        return ResponseEntity.ok(companyService.getCompaniesByIds(ids));
     }
 
 

@@ -4,6 +4,7 @@ import com.adi.companyms.company.dao.CompanyDAO;
 import com.adi.companyms.company.model.Company;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -24,11 +25,17 @@ public class CompanyServiceImpl implements CompanyService{
     }
 
     @Override
+    public List<Company> getCompaniesByIds(List<Long> companyIds) {
+        return companyDAO.findAllById(companyIds);
+    }
+
+    @Override
     public Company getCompanyById(long id) {
         return companyDAO.findById(id).orElse(null);
     }
 
     @Override
+    @Transactional
     public Company createCompany(Company company) {
         companyDAO.save(company);
         return company;

@@ -1,20 +1,11 @@
-package com.adi.companyms.company.model;
+package com.adi.jobms.job.external;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.*;
-
-import java.util.List;
-
-@Entity
 public class Company {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String name;
     private String description;
     private Double rating;
-    @Version
-    private Integer version;
+
     public Company() {
     }
 
@@ -61,8 +52,8 @@ public class Company {
         return "Company{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", description='" + description +
-                ", rating='" + rating +
+                ", description='" + description + '\'' +
+                ", rating=" + rating +
                 '}';
     }
 }

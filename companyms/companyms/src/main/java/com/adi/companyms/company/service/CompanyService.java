@@ -8,6 +8,7 @@ import java.util.List;
 
 public interface CompanyService {
     List<Company> getAllCompanies();
+    List<Company> getCompaniesByIds(List<Long> companyIds);
     Company getCompanyById(long id);
     Company createCompany(Company company);
     Company updateCompany(long id, Company company);
