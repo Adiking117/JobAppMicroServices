@@ -65,7 +65,7 @@ public class JobServiceImpl implements JobService {
         );
         List<Company> companies = CompanyList.getBody();
 
-        Map<Long,Company> CompanyMap = companies.stream().collect(Collectors.toMap(Company::getId, c->c));
+        Map<Long,Company> CompanyMap = companies.stream().collect(Collectors.toMap(Company::getId,c->c));
 
         return AllJobs.stream().map(j-> new JobCompanyDTO(j,CompanyMap.get(j.getCompanyId()))).collect(Collectors.toList());
         // 1 Job called
